@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+
+    <!-- reset.css -->
+    <link rel="stylesheet" href="./dist/css/reset.min.css">
+    <!-- bootstrap.min.css -->
+    <link rel="stylesheet" href="./lib/bootstrap4/css/bootstrap.min.css">
+    <!-- common.min.css -->
+    <link rel="stylesheet" href="./dist/css/common.min.css">
+    <!-- login.min.css -->
+    <link rel="stylesheet" href="./dist/css/login.min.css">
+
+
+    <!-- jquery.min.js -->
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <!-- popper.min.js -->
+    <script src="./lib/popper/popper.min.js"></script>
+    <!-- bootstrap.min.js -->
+    <script src="./lib/bootstrap4/js/bootstrap.min.js"></script>
+    <!-- index.js -->
+    <script src="./js/login.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
+            <div class="container navBox">
+                <a class="navbar-brand" href="#">
+                    市场有风险，出借需谨慎！
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">全国服务热线：4000-018-018</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">帮助中心</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">关注我们 <span class="weixin"></span> <span
+                                    class="sina"></span></a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <span class="iconfont icon-weixin">
+              </span> -->
+
+                            <a class="nav-link" href="#"> <span class="telp"></span> 手机宜贷</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- nav -->
+    <nav class="container-nav">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <h1>
+                        <img src="./images/title01.png" alt="宜贷网">
+                        <span class="line"></span>
+                        <span class="logo-next" alt="宜贷网"></span>
+                    </h1>
+                </a>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">首页</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">我要投资</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">我要借款</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">个人中心</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">论坛</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">债权兑换商城</a>
+                        </li>
+                </div>
+
+
+                <div class="navbar-brand-right">
+                    <label> <span class="navbar-right-icon"></span> <a href="./login.html">登录</a></label>
+                    <span class="line"></span>
+                    <a href="./register.html">注册</a>
+                </div>
+
+            </div>
+        </nav>
+    </nav>
+
+    <!-- main -->
+    <main class="main">
+        <div class="contianer">
+            <div class="main-login">
+                <div class="text">
+                    <p>官方QQ交流一群：56814990</p>
+                    <p>官方QQ交流二群：710862155</p>
+                    <p>官方QQ交流三群：462127517</p>
+                    <p>官方QQ交流四群：626894938</p>
+                </div>
+                <div class="login-box">
+                    <h3><span>会员登录</span><a href="./register.html" target="_top">立即注册</a>
+                    </h3>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <input id="username" type="text" class="form-control" placeholder="支持用户名/手机号/邮箱登录"
+                            aria-label="Username" aria-describedby="basic-addon1" autofocus>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="请输入密码" aria-label="Username"
+                            aria-describedby="basic-addon1" id="userpwd">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <input type="text" class="form-control topAlign" id="verify" placeholder="请输入验证码"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                        <p>
+                            <canvas width="100" height="40" id="verifyCanvas" style="display: none;"></canvas>
+                            <img id="code_img">
+                        </p>
+                    </div>
+                    <div class="agreement">
+                        <input type="checkbox" id="agree" name="agree" autocomplete="off" checked="true"> <label
+                            class="agree-protocol kxm0 kxml20" for="agree">我已阅读并同意</label>
+                        <a href="https://www.gkkxd.com/cms/aboutKxd/legalTextWithoutCrumb/2429.html"
+                            target="_blank">《开鑫贷会员服务协议及隐私权政策》</a>
+
+                    </div>
+                    <button type="button" class="btn-l" id="login-btn">立即登录</button>
+
+                    <p class="notes">
+                        <span>密码连续输错5次，账户会被锁定，次日解锁</span>
+                        <a href="https://www.gkkxd.com/user/forgetPwd" target="_top"> 忘记密码?</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- footer -->
+    <footer>
+        <div class="footer2 contianer">
+            <div class="links">
+                <a href="/">宜贷首页</a>|
+                <a href="/invest/index/">我要出借</a>|
+                <a href="/index/guide/">新手引导</a>|
+                <a href="/about/index/">关于我们</a>
+            </div>
+            <p>Copyright©2014-2016 Shanghai Yidai Co.,Ltd.All Rights Reserved. 沪ICP备15020893号-1</p>
+        </div>
+    </footer>
+</body>
+
+</html>

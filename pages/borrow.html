@@ -1,0 +1,49 @@
+<!-- 我要借款 -->
+<link rel="stylesheet" href="../dist/css/borrow.min.css">
+
+<div class="container">
+  <p class="text-left">投资列表</p>
+
+  <div class="d-flex">
+    <p>标的状态</p>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+
+      <label class="btn btn-secondary active">
+        <input type="radio" name="options" id="option1" checked> 全部
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option2"> 招标中
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option3"> 还款中
+      </label>
+    </div>
+  </div>
+
+
+
+  <table class="table el-table table-hover">
+    <thead>
+      <tr>
+        <th scope="col" style="border-top: none;">借款人</th>
+        <th scope="col" style="border-top: none;">借款标题</th>
+        <th scope="col" style="border-top: none;">年利率</th>
+        <th scope="col" style="border-top: none;">金额</th>
+        <th scope="col" style="border-top: none;">还款方式</th>
+        <th scope="col" style="border-top: none;">进度</th>
+        <th scope="col" style="border-top: none;">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>zs</td>
+        <td>给我2000度过难关</td>
+        <td>10.00%</td>
+        <td>2,000.00</td>
+        <td>按月分期还款</td>
+        <td>100.00%</td>
+        <td><button type="button" class="btn btn-danger btn-sm">查看</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

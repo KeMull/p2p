@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提现</title>
+
+    <!-- reset.css -->
+    <link rel="stylesheet" href="./dist/css/reset.min.css">
+    <!-- bootstrap.min.css -->
+    <link rel="stylesheet" href="./lib/bootstrap4/css/bootstrap.min.css">
+    <!-- common.min.css -->
+    <link rel="stylesheet" href="./dist/css/common.min.css">
+    <!-- account-T.min.css -->
+    <link rel="stylesheet" href="./dist/css/account-T.min.css">
+
+
+    <!-- jquery.min.js -->
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <!-- popper.min.js -->
+    <script src="./lib/popper/popper.min.js"></script>
+    <!-- bootstrap.min.js -->
+    <script src="./lib/bootstrap4/js/bootstrap.min.js"></script>
+    <!-- account-T.min.js -->
+    <script src="./dist/js/account-T.min.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
+            <div class="container navBox">
+                <a class="navbar-brand" href="#">
+                    市场有风险，出借需谨慎！
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">全国服务热线：4000-018-018</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">帮助中心</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">关注我们 <span class="weixin"></span> <span
+                                    class="sina"></span></a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <span class="iconfont icon-weixin">
+              </span> -->
+
+                            <a class="nav-link" href="#"> <span class="telp"></span> 手机宜贷</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- nav -->
+    <nav class="container-nav">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <h1>
+                        <img src="./images/title01.png" alt="宜贷网">
+                        <span class="line"></span>
+                        <span class="logo-next" alt="宜贷网"></span>
+                    </h1>
+                </a>
+            </div>
+        </nav>
+    </nav>
+
+    <!-- main -->
+    <main class="container">
+        <div class="top">
+            <h3>账户提现</h3>
+            <p>1. 本平台工作日会处理当天 17:00 之前的提款申请。</p>
+            <p>2. 为了确保银行转账成功，请您确认银行账号信息的 正确性。</p>
+            <p>3. 单笔提现范围-普通用户500.00 元 ~ 500000.00 元。</p>
+            <p>4. 单笔提现范围-VIP用户500.00 元 ~ 500000.00 元。</p>
+            <p>5. 目前提现服务费：1万元(含) 之内：2.00 元/笔；1万元（以上） ：5.00 元/笔。</p>
+            <p>6. 为避免信用卡套现，故充值15日内未投资提现按提现金额的0.4%收取提现费用。</p>
+            <p>7. 本次可提现 = 可用余额 - 净值保证金 - 不可提现金额 + 投标冻结 - 最高服务费 - 返还体验金</p>
+        </div>
+
+        <div style="margin: 10px 2px; font-size: 18px; font-weight: bold;" class="row h4 d-flex">
+            <div class="col-sm-4">
+                总金额：<span class="text-primary">10000元</span>
+            </div>
+            <div class="col-sm-4">
+                可提现金额：<span class="text-primary">8000元</span>
+            </div>
+            <div class="col-sm-4">
+                冻结金额：<span class="text-primary">2000元</span>
+            </div>
+        </div>
+
+        <div class="listBox">
+            <div class="col-sm-6">
+                <form action="#">
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-5 col-form-label">银行</label>
+                        <div class="col-sm-7">
+                            <select class="form-control">
+                                <option>工商银行</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputText" class="col-sm-5 col-form-label">交易号</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="inputText">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputText" class="col-sm-5 col-form-label">充值时间</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="inputText">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputText" class="col-sm-5 col-form-label">充值金额</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="inputText">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputText" class="col-sm-5 col-form-label">说明</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control form-control-lg" id="inputText">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputText" class="col-sm-5 col-form-label"></label>
+                        <div class="col-sm-7">
+                            <button type="button" class="btn btn-primary">确定提交</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-sm-6">
+
+            </div>
+
+        </div>
+        </div>
+    </main>
+
+
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="p-3 bg-dark text-white-50">
+            <div class="container footer-box">
+
+                <ul class="footer-left company-info">
+                    <li>
+                        <p>关于宜贷</p>
+                        <a href="http://www.yidai.com/about/index.html" target="_blank" rel="nofollow">关于平台</a>
+                        <a href="http://www.yidai.com/gdjg/index.html" target="_blank" rel="nofollow">公司概况</a>
+                        <a href="http://www.yidai.com/cpyc/index.html" target="_blank" rel="nofollow">诚聘英才</a>
+                        <a href="http://www.yidai.com/lxwm/index.html" target="_blank" rel="nofollow">联系我们</a>
+                    </li>
+                    <li>
+                        <p>宜贷风采</p>
+                        <a href="http://www.yidai.com/ggzx/index.html" target="_blank" rel="nofollow">媒体报道</a>
+                        <a href="http://www.yidai.com/zjyd/index.html" target="_blank" rel="nofollow">走进宜贷</a>
+                        <a href="http://www.yidai.com/qywh/index.html" target="_blank" rel="nofollow">企业文化</a>
+                        <a href="http://www.yidai.com/ryzz/index.html" target="_blank" rel="nofollow">荣誉资质</a>
+                    </li>
+                    <li>
+                        <p>新手上路</p>
+                        <a href="http://www.yidai.com/help/cjwt/a1883.html" target="_blank" rel="nofollow">收费标准</a>
+                        <a href="http://www.yidai.com/help/cjwt/a335.html" target="_blank" rel="nofollow">借款利率</a>
+                        <a href="http://www.yidai.com/help/cjwt/index.html" target="_blank" rel="nofollow">新手必读</a>
+                        <a href="http://www.yidai.com/gonggao/news/index.html" target="_blank" rel="nofollow">网站公告</a>
+                    </li>
+                </ul>
+                <div class="footer-center">
+                    <div>
+                        <p>关注我们：宜贷与你快乐分享</p>
+                        <div>
+                            <div class="weixin">
+                                <img src="./images/app_qrcode.jpg" alt="宜贷网微信">
+                                <p>官方微信：宜贷网</p>
+                            </div>
+                            <div class="app">
+                                <img src="./images/app_qrcode.jpg" alt="宜贷网app下载">
+                                <p>官方APP：宜贷网</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-rigth">
+                    <div class="tel clearfix">
+                        <span class="icon icon-tel"></span>
+                        <div class="text">
+                            <p>全国服务热线：<span>9:00-21:30</span></p>
+                            <b>4000-018-018</b>
+                        </div>
+                    </div>
+                    <p class="c-aaa">公司地址：上海市嘉定区银翔路819号中暨大厦10楼1006室</p>
+                    <p class="c-aaa">运营中心：成都市锦江区东华正街42号广电仕百达国际大厦5楼（四川分公司）</p>
+                    <p class="c-aaa">邮编：610066 Email：mail@yidai.com</p>
+                    <p>上海易贷网金融信息服务有限公司　<a href="http://beian.miit.gov.cn" target="_blank"
+                            rel="nofollow">沪ICP备15020893号-1</a>
+                    </p>
+                    <p>Copyright©2014-2018 Shanghai Yidai Co.,Ltd.All Rights Reserved.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="container">
+                <a href="#"><span></span></a>
+                <a href="#"><span></span></a>
+                <a href="#"><span></span></a>
+                <a href="#"><span></span></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

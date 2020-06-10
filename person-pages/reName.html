@@ -1,0 +1,81 @@
+<!-- reName.min.css -->
+<link rel="stylesheet" href="./dist/css/reName.min.css">
+
+
+<!-- 实名认证 -->
+
+<div class="alert alert-light border" role="alert">
+    <p class="alert-secondary">实名认证</p>
+
+
+    <form action="">
+        <p>为保护您账户安全，实名认证成功之后不能修改信息，请认真填写！</p>
+        <div class="form-group">
+            <label class="col-sm-4">用户名</label>
+            <div class="col-sm-8 first">
+                <p class="form-control-static">小强</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 " for="realName">姓名</label>
+            <div class="col-sm-8">
+                <input id="realName" name="realName" class="form-control" type="text" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4  " for="sex">性别</label>
+            <div class="col-sm-8">
+                <select id="sex" class="form-control" name="sex" size="1">
+                    <option value="0">男</option>
+                    <option value="1">女</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4  " for="idtype">证件类型</label>
+            <div class="col-sm-8">
+                <select id="idType" class="form-control" name="idtype" size="1">
+                    <option value="0">身份证</option>
+                    <option value="1">驾驶证</option>
+                    <option value="2">军官证</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4  " for="idnumber">证件号码</label>
+            <div class="col-sm-8">
+                <input id="idNumber" class="form-control" name="idnumber" type="text" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4  " for="birthdate">出生日期</label>
+            <div class="col-sm-8">
+                <input id="birthDate" class="form-control" name="birthdate" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4  " for="birthdate">证件地址</label>
+            <div class="col-sm-8">
+                <input id="birthDate" class="form-control second" name="birthdate" type="text">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-sm-4  " for="birthdate">身份证照片</label>
+            <div class="col-sm-8">
+
+                <p>请点击"选择图片",选择证件的正反两面照片。</p>
+
+                <div>
+                    <input type="file" onchange="previewImage(this)">
+                    <div id="preview">
+                        <img id="imghead src="" alt="">
+                            
+                        </div>
+                        <input id=" birthDate" class="form-control second" name="birthdate" type="text">
+                    </div>
+                </div>
+            </div>
+    </form>
+</div>
