@@ -23,7 +23,7 @@
     <!-- bootstrap.min.js -->
     <script src="./lib/bootstrap4/js/bootstrap.min.js"></script>
     <!-- register.js -->
-    <script src="./dist/js/register.min.js"></script>
+    <script src="./js/register.js"></script>
 </head>
 
 <body>
@@ -86,7 +86,7 @@
                 <div class="kx-welcome">欢迎加入 开鑫贷
                 </div>
                 <div class="kx-login-action">
-                    <span>已有账户？</span><a href="/user/login">登录</a>
+                    <span>已有账户？</span><a href="./login.html">登录</a>
                 </div>
             </div>
         </div>
@@ -109,36 +109,45 @@
                 </ul>
 
 
-                <form>
+                <div class="re-box">
                     <div class="form-group row">
-                        <label for="text" class="col-sm-2 col-form-label">用户名：</label>
+                        <label for="username" class="col-sm-2 col-form-label">用户名：</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="text">
+                            <input type="text" class="form-control" id="username" placeholder="请输入用户名" autofocus>
                         </div>
+                        <span></span>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">密码：</label>
+                        <label for="pwd" class="col-sm-2 col-form-label">密码：</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword">
+                            <input type="password" class="form-control" id="pwd" placeholder="请输入密码">
                         </div>
+                        <span></span>
                     </div>
                     <div class="form-group row">
-                        <label for="tel" class="col-sm-2 col-form-label">手机号：</label>
+                        <label for="email" class="col-sm-2 col-form-label">邮箱：</label>
                         <div class="col-sm-10">
-                            <input type="tel" class="form-control" id="tel">
+                            <input type="text" class="form-control" id="email" placeholder="请输入邮箱">
                         </div>
+                        <span></span>
+                    </div>
+                    <div class="form-group row">
+                        <label for="nickname" class="col-sm-2 col-form-label">昵称：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="nickname" placeholder="请输入昵称">
+                        </div>
+                        <span></span>
                     </div>
                     <div class="form-group row kx-register-form-list">
-                        <label for="validateCode" class="col-sm-2 col-form-label">验证码：</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control w128" id="captchaCode"
-                                style="width: 130px;display: inline-block" placeholder="请输入验证码" name="captchaCode">
-                            <div id="captchaShow"
-                                style="width: 80px;height: 32px; background-image: url(data:image/jpeg;base64,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);  background-repeat:no-repeat;                cursor: pointer; background-position-x: -20px; vertical-align:middle;margin-left: 10px ;  display: inline-block">
-                            </div>
-                            <a href="javascript:" id="refresh"
-                            style="font-size:12px;vertical-align:middle;margin-left:3px" class="">换一张</a>
+                        <label for="verify" class="col-sm-2 col-form-label">验证码：</label>
+                        <div class="col-sm-10 d-flex">
+                            <input type="text" class="form-control w128" id="verify" placeholder="请输入验证码" name="verify">
+                            <p style="width: 100px; height: 38px; margin-left: 30px;">
+                                <canvas width="100" height="38" id="verifyCanvas" style="display: none;"></canvas>
+                                <img id="code_img">
+                            </p>
                         </div>
+                        <span></span>
                     </div>
                     <div class="form-group">
                         <div class="form-check">
@@ -151,10 +160,10 @@
                         </div>
                     </div>
 
-                    <button type="button" class="rebtn">
+                    <button type="button" class="rebtn" disabled>
                         立即注册
                     </button>
-                </form>
+                </div>
             </div>
         </div>
 
@@ -165,10 +174,10 @@
     <footer>
         <div class="footer2 contianer">
             <div class="links">
-              <a href="/">宜贷首页</a>|
-              <a href="/invest/index/">我要出借</a>|
-              <a href="/index/guide/">新手引导</a>|
-              <a href="/about/index/">关于我们</a>
+                <a href="/">宜贷首页</a>|
+                <a href="/invest/index/">我要出借</a>|
+                <a href="/index/guide/">新手引导</a>|
+                <a href="/about/index/">关于我们</a>
             </div>
             <p>Copyright©2014-2016 Shanghai Yidai Co.,Ltd.All Rights Reserved. 沪ICP备15020893号-1</p>
         </div>
