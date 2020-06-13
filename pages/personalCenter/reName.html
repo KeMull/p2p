@@ -8,7 +8,7 @@
     <p class="alert-secondary">实名认证</p>
 
 
-    <form action="">
+    <div id="main-rename">
         <p>为保护您账户安全，实名认证成功之后不能修改信息，请认真填写！</p>
         <div class="form-group">
             <label class="col-sm-4">用户名</label>
@@ -64,18 +64,19 @@
         <div class="form-group">
             <label class="col-sm-4  " for="birthdate">身份证照片</label>
             <div class="col-sm-8">
-
                 <p>请点击"选择图片",选择证件的正反两面照片。</p>
-
                 <div>
                     <input type="file" onchange="previewImage(this)">
                     <div id="preview">
                         <img id="imghead src="" alt="">
                             
-                        </div>
-                        <input id=" birthDate" class="form-control second" name="birthdate" type="text">
+                    </div>
+                    <input id=" birthDate" class="form-control second" name="birthdate" type="text">
                     </div>
                 </div>
             </div>
-    </form>
-</div>
+            <button type="button" class="btn btn-primary col-sm-offset-5" id="submitBtn">确定提交</button>
+        </div>
+
+
+    </div>

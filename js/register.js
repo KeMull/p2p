@@ -117,14 +117,12 @@ $(function () {
                             $uname.css({border:"1px solid red"});
 
                             uFlag = false;
-                            console.log(uFlag)
                         }else{
                             $uname.closest(".form-group").find("span").text("");
                             $uname.css({border:"1px solid green"});
                             $uname.closest(".form-group").append('<img class="img-show" src="../../images/成功.png"/>');
 
                             uFlag = true;
-                            console.log(uFlag)
                         }
                         
                     }
@@ -137,7 +135,6 @@ $(function () {
                 $uname.closest(".form-group").find("span").text("请输入合法用户名：中文 && 英文字符").css({color:"red"});
 
                 uFlag = false;
-                console.log(uFlag)
             }
 
         }else{
@@ -147,34 +144,41 @@ $(function () {
             $uname.closest(".form-group").find("span").text("请输入用户名").css({color:"red"});
 
             uFlag = false;
-            console.log(uFlag)
         }
+    }).keyup(function(){
+        testing($uname,"用户名")
     })
 
 
     //密码验证
-    var ppFlag;   //定义一个变量来接受验证返回的返回值
+    var ppFlag=false;   //定义一个变量来接受验证返回的返回值
     $upwd.blur(function(){
         //获取密码框的val值
         var pVal = $upwd.val();
         ppFlag = regChecking($upwd,pVal,/^[a-zA-Z0-9]{4,12}$/,"的密码：数字或大小写字母，4-12位","密码",pFlag)
+    }).keyup(function(){
+        testing($upwd,"密码")
     })
 
 
     //邮箱验证
-    var eeFlag;  //定义一个变量来接受验证返回的返回值
+    var eeFlag=false;  //定义一个变量来接受验证返回的返回值
     $uemail.blur(function(){
         var eVal = $uemail.val();
-        eeFlag = regChecking($uemail,eVal,/^[A-Za-z\.\u4e00-\u9fa5]+$/,"的昵称：中文或英文","昵称",eFlag);
+        eeFlag = regChecking($uemail,eVal,/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,"的昵称：中文或英文","昵称",eFlag);
 
+    }).keyup(function(){
+        testing($uemail,"邮箱")
     })
 
 
     //昵称验证
-    var kkFlag;  //定义一个变量来接受验证返回的返回值
+    var kkFlag=false;  //定义一个变量来接受验证返回的返回值
     $ukname.blur(function(){
         var kVal = $ukname.val();
         kkFlag = regChecking($ukname,kVal,/^[A-Za-z\.\u4e00-\u9fa5]+$/,"的昵称：中文或英文","昵称",kFlag)
+    }).keyup(function(){
+        testing($ukname,"昵称")
     })
 
     //验证码
@@ -196,7 +200,6 @@ $(function () {
 
                 vFlag = true;
 
-                console.log(vFlag);
             }else{
                 //失败
                 $verify.css({border:"1px solid red"});
@@ -209,7 +212,6 @@ $(function () {
                 drawCode();
 
                 vFlag = false;
-                console.log(vFlag);
             }
         }else{
             //没有值
@@ -219,8 +221,9 @@ $(function () {
 
 
             vFlag = false;
-            console.log(vFlag);
         }
+    }).keyup(function(){
+        testing($verify,"验证码")
     })
 
     //验证函数
@@ -268,6 +271,17 @@ $(function () {
     }
 
 
+    //键盘事件验证函数
+    function testing(obj,text){
+        var len = obj.val().length;
+        if(len>0){
+            obj.closest(".form-group").find("span").text("");
+            obj.css({border:"1px solid #ccc"});
+        }else{
+            obj.closest(".form-group").find("span").text("请输入"+ text + "").css({color:"red"});
+            obj.css({border:"1px solid red"})
+        }
+    }
 
 
 
@@ -288,34 +302,37 @@ $(function () {
 
     //点击提交按钮进行ajax 验证
     $( ".rebtn" ).click(function(){
-        console.log(uFlag,ppFlag,eeFlag,kkFlag,vFlag)
-        if( uFlag && ppFlag && eeFlag && kkFlag && vFlag ){
-            
-            //发送ajax验证
-            $.ajax({
-                url:"http://127.0.0.1:8848/reg.php",
-                type:"POST",
-                data:{
-                    username:$uname.val(),
-                    username:$upwd.val(),
-                    username:$uemail.val(),
-                    username:$ukname.val()
-                },
-                success:function(msg){
-                    console.log( msg );
-                    if( msg == 'fail' ){
-                        console.log(msg)
-                        alert("恭喜你注册失败")
-                    }else{
-                        console.log(msg)
-                        alert("恭喜你注册成功");
-                        location.href = "./login.html";
-                    }
-                }
+        //判断不成功时
+        if( !(uFlag && ppFlag && eeFlag && kkFlag && vFlag) ){
 
-            })
+            //去触发失去焦点事件
+            $uname.trigger("blur");
+            $upwd.trigger("blur");
+            $uemail.trigger("blur");
+            $ukname.trigger("blur");
+            $verify.trigger("blur");
+            return false;
         }
+        //发送ajax验证
+        $.ajax({
+            url:"http://127.0.0.1:8848/reg.php",
+            type:"POST",
+            data:{
+                username:$uname.val(),
+                pwd:$upwd.val(),
+                email:$uemail.val(),
+                nickname:$ukname.val()
+            },
+            success:function(msg){
+                if( msg == 'fail' ){
+                    alert("恭喜你注册失败")
+                }else{
+                    alert("恭喜你"+$uname.val());
+                    location.href = "./login.html";
+                }
+            }
 
+        })
 
     })
 

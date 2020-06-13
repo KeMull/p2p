@@ -23,9 +23,18 @@ $(function () {
                 $(".main").load("../../pages/borrow.html")
                 break;
 
+            case "#app":
+                $(".main").load("../../app.html")
+                break;
+
             case "#investment":
                 $(".main").load("../../pages/investment.html")
                 break;
+
+            case "#details":
+                $(".main").load("../../details.html")
+                break;
+
 
             case "#personalCenter":
                 personalLoadPage("#personalCenter/loanProgram");
@@ -51,7 +60,13 @@ $(function () {
                 personalLoadPage(hash)
                 break;
 
-                
+            case "#personalCenter/rePersonal":
+                personalLoadPage(hash)
+                break;
+
+            case "#personalCenter/loan":
+                personalLoadPage(hash)
+                break;
         }
         navActiveChange(hash);
     }
@@ -60,17 +75,16 @@ $(function () {
     function personalLoadPage(hash) {
         //截取到hash值
         hash = hash.substr(1);
-        console.log( $('#main-box').length )
-        if( $('#main-box').length ){ 
+        if ($('#main-box').length) {
             //判段个人中心盒子是否存在   存在就加载局部页面  === /点击
-            $(".main-reigt").load("../../pages/"+hash+".html");
+            $(".main-reigt").load("../../pages/" + hash + ".html");
 
             personalNavActive(hash);
-        }else{
+        } else {
 
             //不存在的时候 === 刷新页面 那就重新加载 .main 主体盒子加载个人中心页面  个人中心加载完之后 再去加载 个人中心的局部片段
-            $(".main").load("../../pages/personalCenter.html",function(){
-                $(".main-reigt").load("../../pages/"+hash+".html");
+            $(".main").load("../../pages/personalCenter.html", function () {
+                $(".main-reigt").load("../../pages/" + hash + ".html");
 
                 personalNavActive(hash);
             })
@@ -78,19 +92,18 @@ $(function () {
     }
 
 
-    
+
     //个人中心二级菜单激活样式
-    function personalNavActive(hash){
-        console.log( hash )
-        $('#main-box .main-left a[href="#'+hash+'"]').addClass('active').siblings('a').removeClass('active');
-        
+    function personalNavActive(hash) {
+        $('#main-box .main-left a[href="#' + hash + '"]').addClass('active').siblings('a').removeClass('active');
+
     }
 
     //顶部导航激活样式
     function navActiveChange(hash) {
-        if(hash == "") hash="#home";   //当hash 为空的时候 hash就等于 首页主体
-        if( hash.includes('personalCenter') ) hash="#personalCenter"
-        
+        if (hash == "") hash = "#home";   //当hash 为空的时候 hash就等于 首页主体
+        if (hash.includes('personalCenter')) hash = "#personalCenter"
+
         //当前对应的nav导航添加激活样式  其他的兄弟删除激活样式
         $(".container-nav .nav-item a[href='" + hash + "']").closest(".nav-item").removeClass('active').addClass('active').siblings('.nav-item').removeClass('active');
     }
@@ -132,5 +145,5 @@ $(function () {
         }
     })
 
-
 })
+

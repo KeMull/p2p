@@ -1,0 +1,78 @@
+<!-- reName.min.css -->
+<link rel="stylesheet" href="./dist/css/reName.min.css">
+
+<script src="../../js/rePersonal.js"></script>
+<!-- 实名认证 -->
+
+<div class="alert alert-light border" role="alert">
+    <p class="alert-secondary">实名认证</p>
+
+
+    <div id="main-rename">
+        <div class="form-group">
+            <label class="col-sm-4">真实姓名</label>
+            <div class="col-sm-8 first">
+                <p class="form-control-static">小强</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 " for="realName">证件号码</label>
+            <div class="col-sm-8">
+                <p>512************4646</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4  " for="nickname">昵称</label>
+            <div class="col-sm-8">
+                <input id="nickname" class="form-control" name="idnumber" type="text" value="">
+            </div>
+            <span></span>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4  " for="phone">电话号码</label>
+            <div class="col-sm-8">
+                <input id="phone" class="form-control" name="idnumber" type="text" value="">
+            </div>
+            <span></span>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4  " for="email">联系邮箱</label>
+            <div class="col-sm-8">
+                <input id="email" class="form-control" name="birthdate" type="text">
+            </div>
+            <span></span>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4  " for="education">个人学历</label>
+            <div class="col-sm-8">
+                <select id="education" class="form-control" name="education" size="1" style="width: 160px;">
+                    <option value="0">高中</option>
+                    <option value="1">大学(专)</option>
+                    <option value="2">大学(本)</option>
+                    <option value="3">研究生(专硕)</option>
+                    <option value="4">研究生(学硕)</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4  " for="income">个人收入</label>
+            <div class="col-sm-8">
+                <select id="income" class="form-control" name="income" size="1" style="width: 160px;">
+                    <option value="0"><=50000</option>
+                    <option value="1">50000-100000</option>
+                    <option value="2">>=100000</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="col-sm-4  " for="address">联系地址</label>
+            <div class="col-sm-8">
+                <input id="address" class="form-control second" name="address" type="text" style="width: 400px;">
+            </div>
+            <span class="addSpan"></span>
+        </div>
+
+        <button type="button" class="btn btn-primary col-sm-offset-5" id="submitBtn">确定提交</button>
+    </div>
+</div>

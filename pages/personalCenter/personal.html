@@ -9,22 +9,22 @@
             <img class="icon" src="./images/head_icon.jpg">
         </div>
         <div class="pull-left el-head">
-            <p>昵 称：源代码教育</p>
-            <p>用户名：小强</p>
-            <p>最后登录时间：2016-10-25 15:30:10</p>
+            <p>昵 称：<span id="nickname">源代码教育</span></p>
+            <p>用户名：<span id="username">小强</span></p>
+            <p>最后登录时间：<span id="lastlogintime">2016-10-25 15:30:10</span></p>
         </div>
         <div class="clearfix"></div>
     </div>
 
     <div style="margin: 15px 2px;" class="row h4 main-reigt2">
         <div class="col-sm-4">
-            总金额：<span class="text-primary">10000元</span>
+            总金额：<span id="totalmoney" class="text-primary">10000元</span>
         </div>
         <div class="col-sm-4">
-            可用金额：<span class="text-primary">8000元</span>
+            可用金额：<span id="usablemoney" class="text-primary">8000元</span>
         </div>
         <div class="col-sm-4">
-            冻结金额：<span class="text-primary">2000元</span>
+            冻结金额：<span id="blockedmoney" class="text-primary">2000元</span>
         </div>
     </div>
 
@@ -112,3 +112,6 @@
         </div>
     </div>
 </div>
+
+
+<script src="../../js/personal.js"></script>
