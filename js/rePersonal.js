@@ -19,7 +19,7 @@ $(function () {
     var nnFlag;
     $nickname.blur( function() {
         var nVal = $nickname.val();
-        nnFlag = regChecking($nickname,nVal,/^\w+$/,"昵称",nFlag)
+        nnFlag = regChecking($nickname,nVal,/^[A-Za-z\.\u4e00-\u9fa5]+$/,"昵称",nFlag)
     }).keyup( function() {
         testing($nickname,"昵称")
     })
@@ -46,7 +46,7 @@ $(function () {
     var aaFlag;
     $address.blur(function(){
         var aVal = $address.val();
-        aFlag = regChecking($address,aVal,/^\w+$/,"地址",aFlag)
+        aaFlag = regChecking($address,aVal,/^[A-Za-z\.\u4e00-\u9fa5]+$/,"地址",aFlag)
     }).keyup( function() {
         testing($nickname,"地址")
     })
@@ -111,7 +111,6 @@ $(function () {
 
     $("#submitBtn").click(function () {
 
-
         if( !(nnFlag && ppFlag && eeFlag && aaFlag) ){
             //去触发失去焦点事件
             $nickname.trigger("blur");
@@ -120,27 +119,27 @@ $(function () {
             $address.trigger("blur");
             return false;
         }
-
-
+        
         //判断有值验证成功才提交，不成功不执行ajax验证
-
 
         //发送ajax接口验证
         $.ajax({
             url: "http://127.0.0.1:8848/updateuser.php",
             type: "POST",
             data: {
-                id: localStorage.getItem("uid"),
+                id:localStorage.getItem("uid"),
                 nickname: $nickname.val(),
                 email: $email.val(),
                 phone: $phone.val()
             },
-            success: function (data) {
-                if (data === "ok") {
-                    alert("恭喜你修改成功")
-                    location.href = "#personalCenter/personal"
-                } else {
-                    alert("更新失败，请稍后再试")
+            success:function(data){
+                if( data === "ok" ){
+
+                    alert("更新成功");
+                    location.href = "/#personalCenter/personal"
+                }else{
+
+                    alert("更新失败")
                 }
             }
         })

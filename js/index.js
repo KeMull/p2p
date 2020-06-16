@@ -38,6 +38,11 @@ $(function () {
 
             case "#personalCenter":
                 personalLoadPage("#personalCenter/loanProgram");
+                if( !(localStorage.getItem('uid')) ){
+                    alert("请先登录")
+                    location.href = "/login.html";
+                    return false;
+                }
                 break;
             //个人中心
             case "#personalCenter/loanProgram":
@@ -112,6 +117,8 @@ $(function () {
 
     //判断用户是否登录
     //本地存储里面有用户名 && 用户id  判断
+
+
     login()
     function login() {
         var username = localStorage.getItem('username');
@@ -121,11 +128,12 @@ $(function () {
             //登录按钮
             $('#login-btn').prop({ href: '#' }).text(username);
             //注册按钮
-            $("#res-btn").prop({ href: '#' }).text('注销')
+            $("#res-btn").prop({ href: '#' }).text('注销');
+            $( "#res-btn" ).prop({id:"res-btn1"});
         } else {
             //重新渲染页面
             $('#login-btn').prop({ href: '../login.html' }).text("登录");
-            $("#res-btn").prop({ href: '../register.html' }).text('注册')
+            $("#res-btn").prop({ href: '../register.html' }).text('注册');
         }
 
 
@@ -133,7 +141,7 @@ $(function () {
 
 
     //点击注销按钮 退出登录 清空本地存储
-    $('#login-box-btn').on('click', "#res-btn", function () {
+    $("#res-btn1").on('click', function () {
         if (confirm('您确定要退出吗？')) {
             //删除本地存储
             localStorage.removeItem('username');
@@ -141,7 +149,9 @@ $(function () {
 
             //重新渲染页面
             $('#login-btn').prop({ href: '../login.html' }).text("登录");
-            $("#res-btn").prop({ href: '#' }).text('注册')
+            $("#res-btn1").prop({ href: '#' }).text('注册');
+            $( "#res-btn1" ).prop({id:"res-btn"});
+            history.go(0)
         }
     })
 

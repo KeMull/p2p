@@ -52,6 +52,7 @@ $(function () {
                 if( data === "ok" ){
 
                     alert("借款成功");
+                    location.href = "/#personalCenter/personal"
                 }else{
 
                     alert("借款失败")
